@@ -46,32 +46,21 @@ need_push () {
   fi
 }
 
-ruby_version() {
-  if (( $+commands[rbenv] ))
-  then
-    echo "$(rbenv version | awk '{print $1}')"
-  fi
-
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt | awk '{print $1}')"
-  fi
-}
-
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
-  else
-    echo ""
-  fi
-}
-
 directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+# disable virtualenv adding itself to the prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+
+venv_name() {
+  if [ -n "$VIRTUAL_ENV" ] ; then
+    VENV=`basename $VIRTUAL_ENV`
+    echo "\n%{$fg[yellow]%}($VENV)%{$reset_color%}"
+  fi
+}
+
+export PROMPT=$'\n$(directory_name) $(git_dirty)$(need_push) $(venv_name)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
