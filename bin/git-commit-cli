@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# git commit with message prompt.
+
+echo 'Commit message:'
+read MESSAGE
+exec git commit -m "$MESSAGE"

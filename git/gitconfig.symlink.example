@@ -9,11 +9,18 @@
 [credential]
         helper = GIT_CREDENTIAL_HELPER
 [alias]
-        co = checkout
+        co      = checkout
+        count   = !git shortlog -sn
+        save    = !git add -A && git commit -m 'SAVEPOINT'
+        wip     = commit -am "WIP"
+        amend   = commit -a --amend
+        undo    = reset HEAD~1 --mixed
+        wipe    = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
+        done    = !$ZSH/bin/git-done
         rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
+
 [color]
         diff = auto
         status = auto
@@ -21,7 +28,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = subl
 [apply]
         whitespace = nowarn
 [mergetool]

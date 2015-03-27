@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Switch to develop, pull latest, remove merged branches.
+#
+# http://haacked.com/archive/2014/07/28/github-flow-aliases/
+
+git checkout ${1-develop} && git pull --rebase --prune && git-delete-local-merged
