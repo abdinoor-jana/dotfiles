@@ -12,5 +12,8 @@ $ZSH/osx/set-defaults.sh
 # Upgrade homebrew
 brew update
 
+# Install coreutils for gls
+brew install coreutils
+
 # Install homebrew packages
 $ZSH/homebrew/install.sh 2>&1

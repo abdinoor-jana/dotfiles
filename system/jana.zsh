@@ -1,10 +1,12 @@
 export PATH=$PATH:~/jana/experiments/bin
-export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home"
 
-export VIRTUALENV_USE_DISTRIBUTE=true
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export VIRTUALENV_USE_DISTRIBUTE=true
 source /usr/local/bin/virtualenvwrapper.sh
 
 alias jana="source jana_activate"
