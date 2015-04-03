@@ -4,4 +4,11 @@
 
 branch=$(git rev-parse --abbrev-ref HEAD)
 git push --set-upstream origin $branch
-open "https://github.com/Jana-Mobile/engineering/compare/${branch}?expand=1"
+
+# get and clean up the repository location
+repository=$(git config --get remote.origin.url)
+repository=${repository#git@github.com:}
+repository=${repository%.git}
+
+sleep 1
+open "https://github.com/${repository}/compare/${branch}?expand=1"
