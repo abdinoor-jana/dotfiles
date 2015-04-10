@@ -12,5 +12,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 alias jana="source jana_activate"
 alias kafka="~/jana/kafka-0.7.2-incubating-src/bin/kafka-server-start.sh ~/jana/kafka-0.7.2-incubating-src/config/server.properties"
 alias zookeeper="~/jana/kafka-0.7.2-incubating-src/bin/zookeeper-server-start.sh ~/jana/kafka-0.7.2-incubating-src/config/zookeeper.properties"
+alias cql="jana && jana_ccm_start && ccm node1 cqlsh"
 
 export JANAENV=local
