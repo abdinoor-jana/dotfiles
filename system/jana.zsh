@@ -1,6 +1,7 @@
 export PATH=$PATH:~/jana/experiments/bin
 export PROJECT_HOME=$HOME/Devel
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home
+export M2_HOME=/usr/local/Cellar/maven32/3.2.5/libexec
 
 # virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
