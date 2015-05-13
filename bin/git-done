@@ -4,4 +4,4 @@
 #
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
 
-git checkout ${1-develop} && git pull --prune && git-delete-local-merged
+git checkout ${1-develop} ||  git checkout ${1-master} && git pull --prune && git-delete-local-merged
