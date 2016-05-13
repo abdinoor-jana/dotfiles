@@ -16,3 +16,7 @@ alias zookeeper="~/jana/kafka-0.7.2-incubating-src/bin/zookeeper-server-start.sh
 alias cql="jana && jana_ccm_start && ccm node1 cqlsh"
 
 export JANAENV=local
+
+export SNOWFLAKE_USER=abdinoor
+export SNOWFLAKE_PASSWORD='rpjh6*U#G2TXrMq'
+export SNOWFLAKE_RELEASE_ROOT=/Users/abdinoor/jana/snowflake
